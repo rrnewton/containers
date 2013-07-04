@@ -1846,7 +1846,7 @@ foldrWithKey :: (k -> a -> b -> b) -> b -> Map k a -> b
 foldrWithKey f z = go z
   where
     go z' Tip             = z'
-    go z' (Bin _ kx x l r) = go (f kx x (go z' r)) l
+    go z' (Bin _ kx x l r) = f kx x (go (go z' r) l)
 {-# INLINE foldrWithKey #-}
 
 -- | /O(n)/. A strict version of 'foldrWithKey'. Each application of the operator is
