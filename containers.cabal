@@ -45,6 +45,7 @@ Library
         Data.Map
         Data.Map.Lazy
         Data.Map.Strict
+        Data.Map.Internal
         Data.Set
     if !impl(nhc98)
         exposed-modules:
